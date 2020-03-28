@@ -28,8 +28,10 @@ module.exports = {
 
     const incident = await connection('incidents').where('id', id).select('ong_id').first();
 
-    if(incident.ong_id !== ong_id) {
+    if(incident && incident.ong_id !== ong_id) {
       return response.status(401).json({ error: 'Operation not permitted.' });
+    } else {
+      return response.status(400).json({ error: 'Incident not found.' });
     }
 
     await connection('incidents').where('id', id).delete(); 
