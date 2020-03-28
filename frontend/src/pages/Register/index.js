@@ -60,12 +60,14 @@ export default function Register() {
             value={name}
             onChange={e => setName(e.target.value)}
           />
+
           <input t
             ype="email" 
             placeholder="E-Mail"
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
+
           <input 
             type="text" 
             placeholder="WhatsApp"
@@ -80,6 +82,7 @@ export default function Register() {
               value={city}
               onChange={e => setCity(e.target.value)}
             />
+            
             <input 
               type="text" 
               placeholder="UF" style={{ width: 80 }}
